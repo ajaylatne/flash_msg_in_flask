@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FWC</title>
+</head>
+<body>
+    <div style="background-color: gray; padding: 10px;">
+        {% for cat, msg in get_flashed_messages(with_categories=True) %}
+            {% if cat == 'info' %}
+                <h3 style="color:cyan;">{{ msg }}--> {{ cat }}</h3>
+            {% endif %}
+
+            {% if cat == 'warning' %}
+                <h3 style="color:yellow;">{{ msg }}--> {{ cat }}</h3>
+            {% endif %}
+
+            {% if cat == 'error' %}
+                <h3 style="color:tomato;">{{ msg }}--> {{ cat }}</h3>
+            {% endif %}
+        {% endfor %}
+    </div>
+</body>
+</html>
